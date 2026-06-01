@@ -14,7 +14,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 from src.env_manager import PortableEnvManager
-from src.core_pipeline.py import FullAutomaticSubtitlePipeline  # パスに応じて適宜修正
+from src.core_pipeline import FullAutomaticSubtitlePipeline  # パスに応じて適宜修正
 
 def main():
     print("==========================================================")
