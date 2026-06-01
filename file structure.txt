@@ -1,0 +1,16 @@
+file structure
+ai_srt_generator/
+├── bin/
+│   └── ffmpeg.exe           # OS別のFFmpegバイナリを物理同梱（環境パス不要に）
+├── models/
+│   ├── whisper/             # Faster-Whisperのモデル（large-v3等）
+│   └── speaker/
+│       └── wespeaker_resnet34.onnx  # 軽量話者埋め込みONNXモデル（約90MB）
+├── src/
+│   ├── __init__.py
+│   ├── core_pipeline.py     # 全体を統括するメインロジック
+│   ├── audio_processor.py   # Demucs分離・FFmpegフィルター処理
+│   ├── diarizer.py          # ★今回設計するToken-Free話者分離モジュール
+│   └── txt_validator.py     # 幻聴・ハルシネーション自動検閲
+├── requirements.txt         # 厳選された軽量ライブラリ群
+└── run_app.bat              # ユーザー起動用ポータブルスクリプト
